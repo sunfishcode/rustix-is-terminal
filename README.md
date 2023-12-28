@@ -1,19 +1,25 @@
 <div align="center">
-  <h1><code>is-terminal</code></h1>
+  <h1><code>rustix-is-terminal</code></h1>
 
   <p>
-    <strong>Test whether a given stream is a terminal</strong>
+    <strong>Test whether a given stream is a terminal, using rustix</strong>
   </p>
 
   <p>
-    <a href="https://github.com/sunfishcode/is-terminal/actions?query=workflow%3ACI"><img src="https://github.com/sunfishcode/is-terminal/workflows/CI/badge.svg" alt="Github Actions CI Status" /></a>
-    <a href="https://crates.io/crates/is-terminal"><img src="https://img.shields.io/crates/v/is-terminal.svg" alt="crates.io page" /></a>
-    <a href="https://docs.rs/is-terminal"><img src="https://docs.rs/is-terminal/badge.svg" alt="docs.rs docs" /></a>
+    <a href="https://github.com/sunfishcode/rustix-is-terminal/actions?query=workflow%3ACI"><img src="https://github.com/sunfishcode/rustix-is-terminal/workflows/CI/badge.svg" alt="Github Actions CI Status" /></a>
+    <a href="https://crates.io/crates/rustix-is-terminal"><img src="https://img.shields.io/crates/v/rustix-is-terminal.svg" alt="crates.io page" /></a>
+    <a href="https://docs.rs/rustix-is-terminal"><img src="https://docs.rs/rustix-is-terminal/badge.svg" alt="docs.rs docs" /></a>
   </p>
 </div>
 
 As of Rust 1.70, most users should use the [`IsTerminal`] trait in the Rust
 standard library instead of this crate.
+
+This crate is similar to the [is-terminal] crate, but uses `rustix` instead
+of `libc` in its implementation. This allows it to support `no_std` on
+`unix`-family platforms.
+
+[is-terminal]: https://crates.io/crates/is-terminal/
 
 <hr>
 

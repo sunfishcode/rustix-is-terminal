@@ -1,22 +1,22 @@
 [package]
-name = "is-terminal"
+name = "rustix-is-terminal"
 version = "0.4.9"
 authors = [
     "softprops <d.tangren@gmail.com>",
     "Dan Gohman <dev@sunfishcode.online>"
 ]
-description = "Test whether a given stream is a terminal"
-documentation = "https://docs.rs/is-terminal"
-repository = "https://github.com/sunfishcode/is-terminal"
+description = "Test whether a given stream is a terminal, using rustix"
+documentation = "https://docs.rs/rustix-is-terminal"
+repository = "https://github.com/sunfishcode/rustix-is-terminal"
 keywords = ["terminal", "tty", "isatty"]
 categories = ["command-line-interface"]
 license = "MIT"
-edition = "2018"
+edition = "2021"
 include = ["src", "build.rs", "Cargo.toml", "COPYRIGHT", "LICENSE*", "/*.md"]
 rust-version = "1.63"
 
 [target.'cfg(not(any(windows, target_os = "hermit", target_os = "unknown")))'.dependencies]
-rustix = { version = "0.38.0", features = ["termios"] }
+rustix = { version = "0.38.0", default-features = false, features = ["termios"] }
 
 [target.'cfg(target_os = "hermit")'.dependencies]
 hermit-abi = "0.3.0"
@@ -40,3 +40,7 @@ rustix = { version = "0.38.0", features = ["stdio"] }
 
 [target.'cfg(windows)'.dev-dependencies]
 tempfile  = "3"
+
+[features]
+default = ["std"]
+std = ["rustix/std"]

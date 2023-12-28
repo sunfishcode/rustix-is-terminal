@@ -1,4 +1,4 @@
-//! is-terminal is a simple utility that answers one question:
+//! rustix-is-terminal is a simple utility that answers one question:
 //!
 //! > Is this a terminal?
 //!
@@ -16,7 +16,7 @@
 //! # Example
 //!
 //! ```rust
-//! use is_terminal::IsTerminal;
+//! use rustix_is_terminal::IsTerminal;
 //!
 //! if std::io::stdout().is_terminal() {
 //!     println!("stdout is a terminal")
