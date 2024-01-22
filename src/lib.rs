@@ -95,8 +95,8 @@ impl<Stream: AsHandle> IsTerminal for Stream {
 }
 
 // The Windows implementation here is copied from `handle_is_console` in
-// std/src/sys/windows/io.rs in Rust at revision
-// d7b0bcb20f2f7d5f3ea3489d56ece630147e98f5.
+// library/std/src/sys/pal/windows/io.rs in Rust at revision
+// 99128b7e45f8b95d962da2e6ea584767f0c85455.
 
 #[cfg(windows)]
 fn handle_is_console(handle: BorrowedHandle<'_>) -> bool {
@@ -138,8 +138,6 @@ fn handle_is_console(handle: BorrowedHandle<'_>) -> bool {
 }
 
 /// Returns true if there is an MSYS tty on the given handle.
-///
-/// This incoproates d7b0bcb20f2f7d5f3ea3489d56ece630147e98f5
 #[cfg(windows)]
 unsafe fn msys_tty_on(handle: HANDLE) -> bool {
     use std::ffi::c_void;
