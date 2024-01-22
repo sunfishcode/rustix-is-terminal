@@ -43,7 +43,7 @@ pub trait IsTerminal {
     /// # Example
     ///
     /// ```
-    /// use is_terminal::IsTerminal;
+    /// use rustix_is_terminal::IsTerminal;
     ///
     /// if std::io::stdout().is_terminal() {
     ///     println!("stdout is a terminal")
@@ -61,7 +61,7 @@ pub trait IsTerminal {
 /// # Example
 ///
 /// ```
-/// if is_terminal::is_terminal(&std::io::stdout()) {
+/// if rustix_is_terminal::is_terminal(&std::io::stdout()) {
 ///     println!("stdout is a terminal")
 /// }
 /// ```

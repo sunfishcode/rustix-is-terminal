@@ -23,7 +23,7 @@ of `libc` in its implementation. This allows it to support `no_std` on
 
 <hr>
 
-is-terminal is a simple utility that answers one question:
+rustix-is-terminal is a simple utility that answers one question:
 
 > Is this a terminal?
 
@@ -50,7 +50,7 @@ passed to it, in accordance with [I/O safety].
 ## Example
 
 ```rust
-use is_terminal::IsTerminal;
+use rustix_is_terminal::IsTerminal;
 
 fn main() {
     if std::io::stdout().is_terminal() {
