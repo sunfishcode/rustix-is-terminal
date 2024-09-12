@@ -19,7 +19,7 @@ rust-version = "1.63"
 rustix = { version = "0.38.0", default-features = false, features = ["termios"] }
 
 [target.'cfg(target_os = "hermit")'.dependencies]
-hermit-abi = "0.3.0"
+hermit-abi = "0.4.0"
 
 [target.'cfg(windows)'.dependencies.windows-sys]
 version = "0.59.0"
