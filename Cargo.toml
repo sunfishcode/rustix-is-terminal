@@ -16,10 +16,10 @@ include = ["src", "build.rs", "Cargo.toml", "COPYRIGHT", "LICENSE*", "/*.md"]
 rust-version = "1.63"
 
 [target.'cfg(not(any(windows, target_os = "hermit", target_os = "unknown")))'.dependencies]
-rustix = { version = "0.38.0", default-features = false, features = ["termios"] }
+rustix = { version = "1.0.0", default-features = false, features = ["termios"] }
 
 [target.'cfg(target_os = "hermit")'.dependencies]
-hermit-abi = "0.4.0"
+hermit-abi = "0.5.0"
 
 [target.'cfg(windows)'.dependencies.windows-sys]
 version = "0.59.0"
@@ -36,7 +36,7 @@ atty = "0.2.14"
 libc = "0.2.110"
 
 [target.'cfg(not(any(windows, target_os = "hermit", target_os = "unknown")))'.dev-dependencies]
-rustix = { version = "0.38.0", features = ["stdio"] }
+rustix = { version = "1.0.0", features = ["stdio"] }
 
 [target.'cfg(windows)'.dev-dependencies]
 tempfile  = "3"
